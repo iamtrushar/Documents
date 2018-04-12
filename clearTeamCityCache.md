@@ -1,8 +1,6 @@
 # Clear team city cache for nuget packges
 
-> Open powershell on your computer.
-
-> Clone
+> Open powershell on your computer & clone the following repo:
 
 ```
 git clone https://github.com/pandell/IT
