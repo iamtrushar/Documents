@@ -1,4 +1,7 @@
-# Clear team city cache for nuget packges
+# Powershell commands 
+These are PowerShell commands that are usefull in day to day activity. 
+
+## Clear team city cache for nuget packges
 
 Open powershell on your computer & clone the following repo:
 
@@ -15,13 +18,13 @@ cd C:\git\IT\TeamCity
 lfUpdate -clearCache
 ```
 
-# Remote into another computer 
+## Remote into another computer 
 
 ``` 
 Enter-PSSession -ComputerName HBUILD05
 ```
 
-# Login as a user
+## Login as a user
 ```
 Get-Credential landworks\mistryt
 ```
