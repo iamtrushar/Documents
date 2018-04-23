@@ -14,3 +14,14 @@ cd C:\git\IT\TeamCity
 .\UpdateNuGetOnAgents -buildUser (Get-Credential landworks\builduser) -targetSystems HBUILD05 -se
 lfUpdate -clearCache
 ```
+
+# Remote into another computer 
+
+``` 
+Enter-PSSession -ComputerName HBUILD05
+```
+
+# Login as a user
+```
+Get-Credential landworks\mistryt
+```
