@@ -5,3 +5,4 @@ This repo contains many small how to documents for everyday use.
 - IIS Express Debug
 - Git
 - Powershell
+- VIM Editor
