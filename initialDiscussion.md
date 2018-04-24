@@ -18,7 +18,6 @@ https://build.pandell.com/project.html?projectId=P4NuGet&tab=projectOverview
 - You can see latest published artifacts here:
 https://build.pandell.com/viewLog.html?buildId=320148&tab=artifacts&buildTypeId=PandellNuGet_Package
 
-milang [9:33 AM]
 3. Create `.nupkg` in a project's build configuration, then capture it as build artifact (so that it is automatically shared)
 - Pli, the "foundation class library" for all Pandell projects (it is only a matter of time before GregC starts asking you to start using Pli as well :wink2: ) is using this approach
 - One solution (`.sln`) can have more than one package; in Pli every project/assembly (`.csproj`) (more-or-less) has its own `.nuspec` file, for example this is `Pandell.Common`:
