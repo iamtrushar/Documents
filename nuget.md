@@ -29,3 +29,19 @@ Nuget pack command
 ```
 nuget pack LandWorks.ESRI.ArcGIS.nuspec
 ```
+
+Update Nuget.exe
+```
+nuget update -self
+
+# Should see the following output:
+# Checking for updates from https://www.nuget.org/api/v2/.
+# Currently running NuGet.exe <Lates Version Number>.
+# NuGet.exe is up to date.
+
+# if you don't have nuget installed "globally",
+# you can run nuget bootstrapper instead:
+
+.\.nuget\nuget.exe update -self
+
+```
