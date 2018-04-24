@@ -26,4 +26,4 @@ lib
 ```
 
 Nuget pack command
-`nuget pack LandWorks.ESRI.ArcGIS.nuspec`
+```nuget pack LandWorks.ESRI.ArcGIS.nuspec```
