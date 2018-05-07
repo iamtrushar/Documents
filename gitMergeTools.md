@@ -4,9 +4,9 @@ Here is are the ones that Milan. G and Jason. H introduced me.
 
 ### Good quality 3-way merge tool:
 
-https://www.prestosoft.com/edp_examdiffpro.asp
-Beyond Compare (Pro): http://www.scootersoftware.com/features.php; 
-P4Merge is a decent free 3-way merge tool from Perforce: https://www.perforce.com/downloads/visual-merge-tool; 
+[ExamDiff](https://www.prestosoft.com/edp_examdiffpro.asp)
+[Beyond Compare (Pro)](http://www.scootersoftware.com/features.php)
+[P4Merge is a decent free 3-way merge tool from Perforce](https://www.perforce.com/downloads/visual-merge-tool)
 
 Edit your `.gitconfig` (or `git config --global --edit`):
 
@@ -40,3 +40,5 @@ Git will then open conflicting files one by one and your job is to resolve confl
 Once conflicts are resolved, resume rebase:
 
 ```git rebase --continue```
+
+(Optional Step) Next, start examdiff import setting ![see image] (https://github.com/iamtrushar/Documents/blob/master/images/ExamDiff%20Import%20From%20File.png) I used Milan's setting
