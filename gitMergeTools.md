@@ -4,8 +4,8 @@ Here is are the ones that Milan. G and Jason. H introduced me.
 
 ### Good quality 3-way merge tool:
 
-[ExamDiff](https://www.prestosoft.com/edp_examdiffpro.asp)
-[Beyond Compare (Pro)](http://www.scootersoftware.com/features.php)
+[ExamDiff](https://www.prestosoft.com/edp_examdiffpro.asp), 
+[Beyond Compare (Pro)](http://www.scootersoftware.com/features.php) &
 [P4Merge is a decent free 3-way merge tool from Perforce](https://www.perforce.com/downloads/visual-merge-tool)
 
 Edit your `.gitconfig` (or `git config --global --edit`):
@@ -41,4 +41,4 @@ Once conflicts are resolved, resume rebase:
 
 ```git rebase --continue```
 
-(Optional Step) Next, start examdiff import setting ![see image] (https://github.com/iamtrushar/Documents/blob/master/images/ExamDiff%20Import%20From%20File.png) I used Milan's setting
+(Optional Step) Next, start examdiff import setting from examdiff_milan_options.txt ![see image] (https://github.com/iamtrushar/Documents/blob/master/images/ExamDiff%20Import%20From%20File.png) I used Milan's setting
