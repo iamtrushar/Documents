@@ -30,7 +30,8 @@ Edit your `.gitconfig` (or `git config --global --edit`):
     path = c:/Users/milang/AppData/Local/Perforce/p4merge.exe
 [mergetool "examdiff"]
     cmd = ~/Dropbox/Private/Setup/Bin/dev/examdiff/ExamDiff.exe -merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" -o:\"$MERGED\" -dn1:Theirs -dn2:Base -dn3:Yours -dno:Output -nh
-    trustExitCode = false```
+    trustExitCode = false
+```
 
 Notice the config for both `p4merge` and `examdiff`, with `examdiff` being the default tool.
 Once you have that in place, you simply:
@@ -41,4 +42,5 @@ Once conflicts are resolved, resume rebase:
 
 ```git rebase --continue```
 
-(Optional Step) Next, start examdiff import setting from examdiff_milan_options.txt ![see image] (https://github.com/iamtrushar/Documents/blob/master/images/ExamDiff%20Import%20From%20File.png) I used Milan's setting
+(Optional Step) Next, start examdiff import setting from examdiff_milan_options.txt ![see image] (https://github.com/iamtrushar/Documents/blob/master/images/ExamDiff%20Import%20From%20File.png) I used Milan's setting.
+
