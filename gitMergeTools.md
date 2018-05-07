@@ -42,5 +42,5 @@ Once conflicts are resolved, resume rebase:
 
 ```git rebase --continue```
 
-(Optional Step) Next, start examdiff import setting from examdiff_milan_options.txt ![see image] (https://github.com/iamtrushar/Documents/blob/master/images/ExamDiff%20Import%20From%20File.png) I used Milan's setting.
+(Optional Step) Next, start examdiff import setting from examdiff_milan_options.txt ![see image](https://github.com/iamtrushar/Documents/blob/master/images/ExamDiff%20Import%20From%20File.png) I used Milan's setting.
 
