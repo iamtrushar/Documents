@@ -3,7 +3,7 @@
 
 Here is an example of how rebase works with pull request. 
 
-Make sure you have basic configuration setup in gitConfig from here https://github.com/pandell/SamplePliWeb/wiki/Git-configuration. Git config is found in %userprofile%\.gitConfig
+Make sure you have basic configuration setup in gitConfig from [here](https://github.com/pandell/SamplePliWeb/wiki/Git-configuration). Git config is found in %userprofile%\.gitConfig
 
 Create two branches (`branch1` & `branch2`) from `master` repo, add two files (`file1`, `file2` respectively in each branch) and pushed them to remote. Next create a PR for `branch1` and approve it. See below upto this point:
 
@@ -51,3 +51,26 @@ git rebase master
 git pf
 ```
 
+Additionally, sometime merge conflict happens (see here how to setup git's merge tools [here](https://github.com/iamtrushar/Documents/blob/master/gitMergeTools.md))
+
+Find the SHA using `git log -x or gitk --all`
+
+```
+git rebase -i ca6b47f92ea4248d5f762dc048d395a048a15408
+```
+
+This will open an editor (see how to use VIM editor [here](https://github.com/iamtrushar/Documents/blob/master/vimEditorHowTo.md))
+```pick 99a222ae Update ignore file from /.vs to *.vs
+pick 162c8ebb Fix code analysis issues: Add [Serializable] attribute. Add GetObjectData implementation.
+
+# Rebase ca6b47f9..162c8ebb onto ca6b47f9 (2 commands)
+#
+# Commands:
+# p, pick = use commit
+# r, reword = use commit, but edit the commit message
+# e, edit = use commit, but stop for amending
+# s, squash = use commit, but meld into previous commit
+# f, fixup = like "squash", but discard this commit's log message
+# x, exec = run command (the rest of the line) using shell
+# d, drop = remove commit```
+You change `pick` on the first line to `d` (or `drop`), then close the editor saving changes. Git will then perform interactive rebase, dropping the specified commit
