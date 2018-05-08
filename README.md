@@ -6,3 +6,5 @@ This repo contains many small how to documents for everyday use.
 - Git
 - Powershell
 - VIM Editor
+- ORM How To Update
+- VS2017 Pandells Minimum Recommended Settings 
