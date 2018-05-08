@@ -1,3 +1,5 @@
+## Undo a Commit
+
 Copied from [stackoverflow](https://stackoverflow.com/questions/927358/how-to-undo-the-most-recent-commits-in-git)
 
 Undoing a commit is a little scary if you don't know how it works. But it's actually amazingly easy if you do understand.
