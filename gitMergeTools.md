@@ -8,6 +8,8 @@ Here is are the ones that Milan. G and Jason. H introduced me.
 [Beyond Compare (Pro)](http://www.scootersoftware.com/features.php) &
 [P4Merge is a decent free 3-way merge tool from Perforce](https://www.perforce.com/downloads/visual-merge-tool)
 
+Milan's provided me with Pandell licensed `ExamDiff` found [here](https://github.com/iamtrushar/Documents/blob/master/exe/examdiff.sfx.exe). It is password protected so ask me.
+
 Edit your `.gitconfig` (or `git config --global --edit`):
 
 ```# Diff/merge configuration
