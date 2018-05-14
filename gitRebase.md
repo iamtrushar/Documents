@@ -76,7 +76,7 @@ pick 162c8ebb Fix code analysis issues: Add [Serializable] attribute. Add GetObj
 You change `pick` on the first line to `d` (or `drop`), then close the editor saving changes. Git will then perform interactive rebase, dropping the specified commit
 ```
 
-Milan's notes:
+## Milan's notes after `Lpm6` unirepo:
 
 Please note that I rebased all branches (except pcp) on the new `master`, so you will have to update your local branch to point to the new commits:
 
