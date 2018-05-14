@@ -1,6 +1,5 @@
 ## How to rebase on master
 
-
 Here is an example of how rebase works with pull request. 
 
 Make sure you have basic configuration setup in gitConfig from [here](https://github.com/pandell/SamplePliWeb/wiki/Git-configuration). Git config is found in %userprofile%\.gitConfig
@@ -60,7 +59,8 @@ git rebase -i ca6b47f92ea4248d5f762dc048d395a048a15408
 ```
 
 This will open an editor (see how to use VIM editor [here](https://github.com/iamtrushar/Documents/blob/master/vimEditorHowTo.md))
-```pick 99a222ae Update ignore file from /.vs to *.vs
+```
+pick 99a222ae Update ignore file from /.vs to *.vs
 pick 162c8ebb Fix code analysis issues: Add [Serializable] attribute. Add GetObjectData implementation.
 
 # Rebase ca6b47f9..162c8ebb onto ca6b47f9 (2 commands)
@@ -74,3 +74,25 @@ pick 162c8ebb Fix code analysis issues: Add [Serializable] attribute. Add GetObj
 # x, exec = run command (the rest of the line) using shell
 # d, drop = remove commit```
 You change `pick` on the first line to `d` (or `drop`), then close the editor saving changes. Git will then perform interactive rebase, dropping the specified commit
+```
+
+Milan's notes:
+
+Please note that I rebased all branches (except pcp) on the new `master`, so you will have to update your local branch to point to the new commits:
+
+```
+git checkout your-branch
+git fetch --all
+git reset --hard origin/your-branch
+```
+(This assumes you have no pending local changes)
+
+
+If you have local pending changes, you have to rebase onto the remote branch:
+
+```
+git checkout your-branch
+git fetch --all
+git rebase origin/your-branch
+```
+
