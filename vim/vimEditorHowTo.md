@@ -26,7 +26,7 @@ Change each 'foo' to 'bar' for all lines from line 6 to line 10 inclusive. <br /
 To change Vim for any other editor check the [Git Environment Variables](https://git-scm.com/book/en/v2/Git-Internals-Environment-Variables) or [older posts](https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits) with a similar question: How do I make Git use the editor of my choice for commits?
 
 
-Cut and paste:
+### Cut and paste:
 - Position the cursor where you want to begin cutting.
 - Press v to select characters (or uppercase V to select whole lines).
 - Move the cursor to the end of what you want to cut.
