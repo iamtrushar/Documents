@@ -1,13 +1,8 @@
-
-
-
 # AutoMapper Business Logic.
 
-Gets all the legal descriptions record for the job in question. 
-LW_LEGAL_DESCRIPTION
-LW_JOB_SCHEDULE
+Gets all the legal descriptions records (LW_LEGAL_DESCRIPTION) for the job record (LW_JOB_SCHEDULE) in question. 
 
-- Job types can be:
+- Different type of jobs can be set up for each land grid. AutoMapper can map against the following:
   - Township and range (TR)
     - BLM Geographic Coordinate Data Base (GCDB)
     - Lot Tract (LT)
@@ -26,26 +21,27 @@ See tables below:
 
 AutoMapper starts processing the legal descriptions next. 
 
-AutoMapper has a configuraiton where it will attempt to map againts parcel land grid (Land Grid type PAR) when configured for each legal that has parcel number. 
-LW_CODE_CONFIG.CONFIG_VALUE WHERE CONFIG_TYPE = 'AutoMapperParcelFirst'
-N = Will attempt to map parcel if not found then map legal for it's map type.
-Y = Will attempt to map parcel first if not found fail the legal. 
-
-If Meridian code is not set, AutoMapper will find it using State and County. Vendor code is generally used as USGS. (Toben is outdated)
+AutoMapper is configured to map each legal againts parcel land grid (Land Grid type PAR) first. Legal must have parcel number to qualify. 
+NOTE: the following configuration for parcel mapping: 
+- LW_CODE_CONFIG.CONFIG_VALUE WHERE CONFIG_TYPE = 'AutoMapperParcelFirst'
+  N = Will attempt to map parcel if not found then map legal for it's map type.
+  Y = Will attempt to map parcel first if not found fail the legal. 
 
 ### Township and Range
 1. Get all the land grids configured for TR. 
   Loop through each one until legal is found. 
   - Build a search query to get the polygon from Township and section land grid:
-    - Try to get Township polygon (WHERE clause generated from legal description: TWP='72' AND TDIR='N' AND RNG='130' AND RDIR='E' AND STATE='WY' AND COUNTY_CODE='001')
-    - Try to get Section polygon using (WHERE clause generated from legal description: SEC=2 AND TWP='72' AND TDIR='N' AND RNG='130' AND RDIR='E' AND STATE='WY' AND COUNTY_CODE='001') 
+    - Try to get Township polygon (WHERE clause generated from legal description: TWP='72' AND TDIR='N' AND RNG='130' AND RDIR='E' AND STATE='WY' AND COUNTY_CODE='001' AND MER=12)
+    - Try to get Section polygon using (WHERE clause generated from legal description: SEC=2 AND TWP='72' AND TDIR='N' AND RNG='130' AND RDIR='E' AND STATE='WY' AND COUNTY_CODE='001' AND MER=12) 
     (Note Township polygon is used as spatial filter to narrow down search is enabled)
     (Note County layer, which is optional setup up, is used as spatial filter to narrow down search for township and sections)
 2. Once found, check the quarter call in LW_LEGAL_DESCRIPTION.QUARTER_SECTION
   - Quarter futher
   - Quarter call string has `AND` then quarter each string seperatly and then Union the result. 
   - If the quarter call is NULL, empty string, ALL, LEGAL then full section is mapped as is. 
-  
+
+If Meridian `MER` is not set, AutoMapper will find it using State and County values. Vendor is generally used as USGS.
+
 ### Survey Abstract
 1. Get all the land grids configured for SA.
 - Land gird layer type codes supported for Abstracts: 
@@ -88,9 +84,6 @@ If Meridian code is not set, AutoMapper will find it using State and County. Ven
             - Generate the quartersection where clause: LAND_KEY_QQ in ( _qq_ )    
          - Generate the lot where clause: LAND_KEY_QQ in ( _qq_ ) (Step missing)
             
-### Area Block (AB)
-1. Get all the land grids configured for OFFB (offshore block).
-
 ### Dominion Land Survey (DGS)
 1. Get all the land grids configured for LSD (Legal subdivions).
 2. Sepcial consideration for formatting the where clause for the search query:
@@ -103,9 +96,14 @@ If Meridian code is not set, AutoMapper will find it using State and County. Ven
     - Replace if N2 as IN ('NW', 'NE')
     Replace if S2 as IN ('SW', 'SE')
     and so on for `"E2" || "W2"`. 
-      
+
+### Area Block (AB)
+1. Get all the land grids configured for OFFB (offshore block).
+2. Generally mapped as is. No quartering.
+
 ### League and Labour (LL)
-1. Get all the land grids configured for TXSRV (Texas Survey), TXSRO (Texas Survey Overlap). Currently I do not see any special logic for processing League/Labour. I see that AM is actually calling Area Block which does not make sense.  
+1. Get all the land grids configured for TXSRV (Texas Survey), TXSRO (Texas Survey Overlap). Currently I do not see any special logic for processing League/Labour.  
+NOTE: Something about this algo looks amiss - AM is actually calling Area Block which does not make sense. Need further investigation.
 
 ### Tables:
 `LW_JOB_SCHEDULE`
