@@ -107,7 +107,13 @@ If Meridian code is not set, AutoMapper will find it using State and County. Ven
 ### League and Labour (LL)
 1. Get all the land grids configured for TXSRV (Texas Survey), TXSRO (Texas Survey Overlap). Currently I do not see any special logic for processing League/Labour. I see that AM is actually calling Area Block which does not make sense.  
 
-`LW_LEGAL_DESCRIPTION` Table:
+### Tables:
+`LW_JOB_SCHEDULE`
+
+JOB_ID | JOB_AUTOMAP_ID | JOB_STATUS | SUBMIT_DATE | START_DATE | START_TIME | END_DATE | RUN_FREQ | RUN_DAY | LAST_RAN_DATE | LAST_UPDATE_DATE | LAST_UPDATE_BY
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+
+`LW_LEGAL_DESCRIPTION`:
 
 LEGAL_DESC_ID | AGMT_ID | TRACT_ID | ABSTRACT_NUMBER | ADDRESS | ADDRESS_1 | ADDRESS_2 | ALL_TRACTS | ATTRIBUTE_SOURCE | BLOCK | CITY | COUNTRY_CODE | COUNTY_CODE | DEPOSIT_NUMBER | FED_GROUP_CODE | FORMATTED_LEGAL | LABOR | LAST_REMARK_COUNT | LAST_UPDATE_BY | LAST_UPDATE_DATE | LEAGUE | LEGAL_GROSS_ACRES | LEGAL_REF_ID | LOT_NUMBER | LOT_TYPE_CODE | LSD_NUMBER | MAP_STATUS_CODE | MAP_TYPE | MUNICIPALITY_ID | LEGAL_REF_NAME_ID | OFFSHORE_BLOCK | PARCEL_NUMBER | PARENT_ID | OTHER_LOT_NUMBER | PRIME_MERIDIAN_CODE | PROJECT_ID | QUARTER_SECTION_STRING | RANGE_DIRECTION | RANGE_NUMBER | REF_OFFICE_CODE | ROLL_NUMBER | ROW_WIDTH | ROW_UOM | SECTION_NUMBER | SOURCE_KEY | STATE_CODE | SUBDIV_LOT | SUBDIVISION | SURVEY_NAME | TAX_DISTRICT | TITLE_NUMBER | TOWNSHIP_DIRECTION | TOWNSHIP_NUMBER | TRACT_OWNED | TWP_NAME_ID | TX_BLOCK | TX_LOT_NUMBER | TX_SECTION_NUMBER | UNIT_NUMBER | ZIP_CODE | REQUEST_ID | SURVEY_ID | APPRAISAL_ID | REFERENCE_TYPE | SUBDIV_SECTION | CODE_COUNTY_ID | TX_QUARTER | TX_QUARTER_APPLIES | SPATIAL_ID | UNIT_ID | REGION
 --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |--- | --- | --- | --- | --- | --- | --- | --- | --- | --- |--- | --- | --- | --- | --- | --- | --- | --- | --- | --- |--- | --- | --- | --- | --- | --- | --- | --- | --- | --- |--- | --- | --- | --- | --- | --- | --- | --- | --- | --- |--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
