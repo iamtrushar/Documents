@@ -30,7 +30,6 @@ Y = Will attempt to map parcel first if not found fail the legal.
 
 If Meridian code is not set, AutoMapper will find it using State and County. Vendor code is generally used as USGS. (Toben is outdated)
 
-
 ### Township and Range
 1. Get all the land grids configured for TR. 
   Loop through each one until legal is found. 
@@ -43,6 +42,23 @@ If Meridian code is not set, AutoMapper will find it using State and County. Ven
   - Quarter futher
   - Quarter call string has `AND` then quarter each string seperatly and then Union the result. 
   - If the quarter call is NULL, empty string, ALL, LEGAL then full section is mapped as is. 
+  
+### Survey Abstract
+1. Get all the land grids configured for SA.
+- Land gird layer type codes supported for Abstracts: 
+  TXABS (Primary)
+  JRABS (Secondary)
+- Land gird layer type codes supported for Sections:  
+  TXSEC (Primary)
+  JRSEC (Secondary)
+- Land gird layer type code supported for Blocks:  
+  TXBLK (Primary)
+2. Before starting to map, test the LW_LEGAL_DESCRIPTON.TX_QUARTER_APPLIES value: 
+  - TX Abstract (Map only against texas abstract layer and must have LW_LGEAL_DESCRIPTION.ABSTRACT_NUMBER not null or empty)
+  - TX Section (Map only against texas section layer and must have LW_LGEAL_DESCRIPTION.TX_SECTION_NUMBER not null or empty)
+  Note: If abstract number, section number is null and tx_block number is NOT null for the legal, then map against texas block layer.
+3. Legal is attempted to be mapped with primary land gird first. If legal is not found then retry with secondary land grid. 
+4. Texas land gird polygon can have quarter call for west texas with angle tolerance. 
 
 (TrusharM will need to review BLM and LT logic)
 #### BLM Geographic Coordinate Data Base (GCDB) & Lot Tract (LT)
@@ -61,31 +77,14 @@ If Meridian code is not set, AutoMapper will find it using State and County. Ven
         Use Quater Section String values.
         - Check if layerType is GCDB 
           - Check the length of the quater section string.
-            - If length is > 4 (Trim last 4 quarter calls) and use the remainder of the quarter section to get nominal location (see below - TrusharM NOTE add a link instead of code) => _nominallocaiton_
+            - If length is > 4 (Trim last 4 quarter calls) and use the remainder of the quarter section to get `nominal location` (see below - TrusharM NOTE add a link instead of code) => _nominallocaiton_
         - Generate the lot where clause: NOMINAL_LOCATION in ( _nominallocaiton_ )  (Step incomplete)
         - Check if layerType is LT 
           - Check the length of the quater section string.
-            - If length is > 4 (Trim last 4 quarter calls) and use the remainder of the quarter section to get quarter class list (see below - TrusharM NOTE add a link instea of code). Loop on each quarter call and build a comma sepearted expanded quarter call list as: `LandKey+ SectionNumber + expandedQuarterCall)` => _qq_
+            - If length is > 4 (Trim last 4 quarter calls) and use the remainder of the quarter section to get quarter class list (see below - TrusharM NOTE add a link instea of code). Loop on each quarter call and build a comma sepearted `expanded quarter call list` as: `LandKey+ SectionNumber + expandedQuarterCall)` => _qq_
             - Generate the quartersection where clause: LAND_KEY_QQ in ( _qq_ )    
          - Generate the lot where clause: LAND_KEY_QQ in ( _qq_ ) (Step missing)
             
-### Survey Abstract
-1. Get all the land grids configured for SA.
-- Land gird layer type codes supported for Abstracts: 
-  TXABS (Primary)
-  JRABS (Secondary)
-- Land gird layer type codes supported for Sections:  
-  TXSEC (Primary)
-  JRSEC (Secondary)
-- Land gird layer type code supported for Blocks:  
-  TXBLK (Primary)
-2. Before starting to map, test the LW_LEGAL_DESCRIPTON.TX_QUARTER_APPLIES value: 
-  - TX Abstract (Map only against texas abstract layer and must have LW_LGEAL_DESCRIPTION.ABSTRACT_NUMBER not null or empty)
-  - TX Section (Map only against texas section layer and must have LW_LGEAL_DESCRIPTION.TX_SECTION_NUMBER not null or empty)
-  Note: If abstract number, section number is null and tx_block number is NOT null for the legal, then map against texas block layer.
-3. Legal is attempted to be mapped with primary land gird first. If legal is not found then retry with secondary land grid. 
-4. Texas land gird polygon can have quarter call for west texas with angle tolerance. 
-
 ### Area Block (AB)
 1. Get all the land grids configured for OFFB (offshore block).
 
@@ -103,12 +102,9 @@ If Meridian code is not set, AutoMapper will find it using State and County. Ven
     and so on for `"E2" || "W2"`. 
       
 ### League and Labour (LL)
-1. Get all the land grids configured for TXSRV (Texas Survey), TXSRO (Texas Survey Overlap).
+1. Get all the land grids configured for TXSRV (Texas Survey), TXSRO (Texas Survey Overlap). Currently I do not see any special logic for processing League/Labour. I see that AM is actually calling Area Block which does not make sense.  
 
-
-
-
-Nominal Locations:
+`Nominal Locations`:
 ```
                 case "S2":
                     nomLocs = "('P','O','L','K','J','I','N','M')";
@@ -280,7 +276,7 @@ Nominal Locations:
                     break;
 ```
 
-Quarter Call List:
+`Expanded Quarter Call List`:
 ```
                 case "S2":
                     strQQ = "NWSE,NESE,SWSE,SESE,NWSW,NESW,SWSW,SESW";
