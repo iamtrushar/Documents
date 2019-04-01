@@ -1,3 +1,6 @@
+
+
+
 # AutoMapper Business Logic.
 
 Gets all the legal descriptions record for the job in question. 
@@ -104,6 +107,35 @@ If Meridian code is not set, AutoMapper will find it using State and County. Ven
 ### League and Labour (LL)
 1. Get all the land grids configured for TXSRV (Texas Survey), TXSRO (Texas Survey Overlap). Currently I do not see any special logic for processing League/Labour. I see that AM is actually calling Area Block which does not make sense.  
 
+`LW_LEGAL_DESCRIPTION` Table:
+
+LEGAL_DESC_ID | AGMT_ID | TRACT_ID | ABSTRACT_NUMBER | ADDRESS | ADDRESS_1 | ADDRESS_2 | ALL_TRACTS | ATTRIBUTE_SOURCE | BLOCK | CITY | COUNTRY_CODE | COUNTY_CODE | DEPOSIT_NUMBER | FED_GROUP_CODE | FORMATTED_LEGAL | LABOR | LAST_REMARK_COUNT | LAST_UPDATE_BY | LAST_UPDATE_DATE | LEAGUE | LEGAL_GROSS_ACRES | LEGAL_REF_ID | LOT_NUMBER | LOT_TYPE_CODE | LSD_NUMBER | MAP_STATUS_CODE | MAP_TYPE | MUNICIPALITY_ID | LEGAL_REF_NAME_ID | OFFSHORE_BLOCK | PARCEL_NUMBER | PARENT_ID | OTHER_LOT_NUMBER | PRIME_MERIDIAN_CODE | PROJECT_ID | QUARTER_SECTION_STRING | RANGE_DIRECTION | RANGE_NUMBER | REF_OFFICE_CODE | ROLL_NUMBER | ROW_WIDTH | ROW_UOM | SECTION_NUMBER | SOURCE_KEY | STATE_CODE | SUBDIV_LOT | SUBDIVISION | SURVEY_NAME | TAX_DISTRICT | TITLE_NUMBER | TOWNSHIP_DIRECTION | TOWNSHIP_NUMBER | TRACT_OWNED | TWP_NAME_ID | TX_BLOCK | TX_LOT_NUMBER | TX_SECTION_NUMBER | UNIT_NUMBER | ZIP_CODE | REQUEST_ID | SURVEY_ID | APPRAISAL_ID | REFERENCE_TYPE | SUBDIV_SECTION | CODE_COUNTY_ID | TX_QUARTER | TX_QUARTER_APPLIES | SPATIAL_ID | UNIT_ID | REGION
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |--- | --- | --- | --- | --- | --- | --- | --- | --- | --- |--- | --- | --- | --- | --- | --- | --- | --- | --- | --- |--- | --- | --- | --- | --- | --- | --- | --- | --- | --- |--- | --- | --- | --- | --- | --- | --- | --- | --- | --- |--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+
+`LW_GIS_CONNECTION`
+
+GIS_CONN_ID | CONNECTION_NAME | GDB_SERVER | SDE_SERVICE | GDB_DATABASE | GDB_CONNECTION_TYPE | GDB_USER | GDB_PASSWORD | GDB_PATH | GDB_VERSION | LAST_UPDATE_DATE | LAST_UPDATE_BY
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
+
+`LW_GIS_GROUP`
+
+GIS_GROUP_ID | GIS_GROUP_DESC | GIS_CONN_ID | GIS_SPAT_REF_ID | GROUP_USAGE | QUERY_ID | DISABLE_GROUP | GIS_GROUP_TYPE_CODE | VENDOR_CODE | LAST_UPDATE_DATE | LAST_UPDATE_BY | COUNTRY_CODE | GIS_GROUP_QUERY_ID | FEATURE_SERVICE
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
+
+`LW_GIS_LAYER`
+
+GIS_LAYER_ID | GIS_GROUP_ID | LAYER_OWNER | LAYER_NAME | SPATIAL_COLUMN | GEOMETRY_TYPE | LAYER_DESC | LAYER_TYPE_CODE | LAYER_CONFIG_CODE | LAST_UPDATE_DATE | LAST_UPDATE_BY | FACILITY_FLAG | SUMMARY_SOURCE_FLAG
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
+
+`LW_GIS_COLUMN_MAP`
+
+COLUMN_ID | GIS_LAYER_ID | SEARCH_COLUMN | SOURCE_COLUMN | SOURCE_DATATYPE | LAST_UPDATE_DATE | LAST_UPDATE_BY
+--- | --- | --- | --- | --- | --- | --- 
+
+`LW_GIS_SPATIAL_REFERENCE`
+
+GIS_SPAT_REF_ID | GIS_SPAT_REF_DESC | UOM_CODE | ESRI_FACTORY_CODE | LAST_UPDATE_DATE | LAST_UPDATE_BY | DATUM | DATUM_CODE | COORDINATE_SYSTEM | COORD_SYS_CODE
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
 
 `Nominal Locations`:
 ```
