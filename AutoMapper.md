@@ -104,6 +104,7 @@ If Meridian code is not set, AutoMapper will find it using State and County. Ven
 ### League and Labour (LL)
 1. Get all the land grids configured for TXSRV (Texas Survey), TXSRO (Texas Survey Overlap). Currently I do not see any special logic for processing League/Labour. I see that AM is actually calling Area Block which does not make sense.  
 
+
 `Nominal Locations`:
 ```
                 case "S2":
