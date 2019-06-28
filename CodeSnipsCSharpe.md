@@ -13,3 +13,13 @@ if (distanceResult.IsFailure)
 var distance = (double)distanceResult.Unwrap();
 ...
 ```
+
+Parse the JSON returned and assert that the members are as expected, i.e. something like:
+
+var reportUrlResponse = WebMapsAccess.GetReportUrl(...);
+var reportUrlJson = jsonSerializer.Parse<object>(reportUrlResponse);
+Assert.AreEqual(true, reportUrlJson.GetProperty("success"));
+Assert.AreEqual(string.Empty, reportUrlJson.GetProperty("message"));
+Assert.AreEqual(
+    "http://localhost/Reports/views/viewerah.aspx?...",
+    reportUrlJson.GetProperty("value"));
