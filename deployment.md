@@ -23,7 +23,7 @@ Next
 
 - Once executed successufully make sure the apppool is set to "No Managed Code". See PS script to set the appPool:
 
-#### Powershell Script to set appPool to No Managed Code (Assumes appPool `template.net.pandell.com` & `template.pandell.com` exist)
+Powershell Script to set appPool to No Managed Code (Assumes appPool `template.net.pandell.com` & `template.pandell.com` exist)
    ```
    # (Enter-PSSession to target IIS server)
    Enter-PSSession -ComputerName vtrusharwin2016 -Credential net\trusharm
