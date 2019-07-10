@@ -1,13 +1,26 @@
 ## AutoMapper Deployment
 
 ### Setup 
-See Milan's document to set up the following: https://github.com/pandell/Deployment/wiki/IIS-setup
+See Milan's [document](https://github.com/pandell/Deployment/wiki/IIS-setup) to set up the following: 
    - Set up Hyper-V (Windows Server 2016)
    - Install Web Platform Installer (WebPlatformInstaller_x64_en-US)
 
-Install dotnet 3 preview (dotnet-hosting-3.0.0-preview6.19307.2-win)
+- Next, install dotnet 3 preview (dotnet-hosting-3.0.0-preview6.19307.2-win)
+- Run the following script in powershell with proper credentials. This script will copy the template appPool and template website. 
+```
+   cd "C:\Program Files\IIS\Microsoft Web Deploy V3"
+   .\msdeploy.exe 
+     -verb:sync 
+     -source:appHostConfig=template.net.pandell.com,wmsvc=wmiis8web01.net.pandell.com,userName=wdeployadmin,password=*******,encryptPassword=***** 
+     -dest:appHostConfig=template.net.pandell.com,computername=vtrusharwin2016.net.pandell.com,userName=net\trusharm,password=*******,encryptPassword=****** 
+     -allowUntrusted -enableLink:AppPoolExtension 
+     -enableLink:CertificateExtension 
+     -enableLink:HttpCertConfigExtension 
+     -disableLink:ContentExtension 
+     -disableLink:FrameworkConfigExtension
+```
 
-Run the script in PS with proper credentials to copy the apppool and template website. Once executed successufully make sure the apppool is set to "No Managed Code". This currently a manual step here but see PS script:
+- Once executed successufully make sure the apppool is set to "No Managed Code". See PS script to set the appPool:
 
 #### Powershell Script to set appPool to No Managed Code (Assumes appPool `template.net.pandell.com` & `template.pandell.com` exist)
 ```
@@ -20,22 +33,9 @@ Run the script in PS with proper credentials to copy the apppool and template we
    Set-ItemProperty IIS:\AppPools\template.pandell.com managedRuntimeVersion ""
 ```
 
-```
-cd "C:\Program Files\IIS\Microsoft Web Deploy V3"
-.\msdeploy.exe 
-  -verb:sync 
-  -source:appHostConfig=template.net.pandell.com,wmsvc=wmiis8web01.net.pandell.com,userName=wdeployadmin,password=*******,encryptPassword=***** 
-  -dest:appHostConfig=template.net.pandell.com,computername=vtrusharwin2016.net.pandell.com,userName=net\trusharm,password=*******,encryptPassword=****** 
-  -allowUntrusted -enableLink:AppPoolExtension 
-  -enableLink:CertificateExtension 
-  -enableLink:HttpCertConfigExtension 
-  -disableLink:ContentExtension 
-  -disableLink:FrameworkConfigExtension
-```
-
 ### Scripts
 
-Update deployment spreadsheet
+First, update deployment spreadsheet with required values as per convention.
 
 1. Add .nuget folder at root and must contain
     - Nuget.exe
@@ -88,7 +88,5 @@ Update deployment spreadsheet
   
  5. Add Pli.config.json5 & Pli.config.devel.json5
  
-The steps below assume you already have a 64 bit template on the target IIS server.
-
 
 
