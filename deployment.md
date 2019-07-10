@@ -5,7 +5,8 @@ See Milan's [document](https://github.com/pandell/Deployment/wiki/IIS-setup) to 
    - Set up Hyper-V (Windows Server 2016)
    - Install Web Platform Installer (WebPlatformInstaller_x64_en-US)
 
-- Next, install dotnet 3 preview (dotnet-hosting-3.0.0-preview6.19307.2-win)
+Next
+- Install dotnet 3 preview (dotnet-hosting-3.0.0-preview6.19307.2-win)
 - Run the following script in powershell with proper credentials. This script will copy the template appPool and template website. 
 ```
    cd "C:\Program Files\IIS\Microsoft Web Deploy V3"
