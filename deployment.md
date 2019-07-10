@@ -7,7 +7,22 @@ See Milan's document to set up the following: https://github.com/pandell/Deploym
 
 Install dotnet 3 preview (dotnet-hosting-3.0.0-preview6.19307.2-win)
 
-Run the script in PS with proper credentials to copy the apppool and template website. Once executed successufully make sure the apppool is set to "No Managed Code". This currently a manual step and can be converted to PS script. 
+Run the script in PS with proper credentials to copy the apppool and template website. Once executed successufully make sure the apppool is set to "No Managed Code". This currently a manual step here but see PS script:
+
+#### Powershell Script to set appPool to No Managed Code
+```
+   # (Enter-PSSession to target IIS server)
+   Enter-PSSession -ComputerName vtrusharwin2016 -Credential net\trusharm
+
+   $src = "template.net.pandell.com"
+   $trg = "template-netCore.net.pandell.com"
+
+   Import-Module webadministration
+
+   Stop-WebAppPool $src
+   Copy-Item IIS:\AppPools\$src IIS:\AppPools\$trg
+   Set-ItemProperty IIS:\AppPools\$trg managedRuntimeVersion ""
+```
 
 ```
 cd "C:\Program Files\IIS\Microsoft Web Deploy V3"
@@ -77,3 +92,7 @@ Update deployment spreadsheet
   
  5. Add Pli.config.json5 & Pli.config.devel.json5
  
+The steps below assume you already have a 64 bit template on the target IIS server.
+
+
+
