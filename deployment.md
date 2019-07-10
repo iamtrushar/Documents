@@ -25,6 +25,7 @@ cd "C:\Program Files\IIS\Microsoft Web Deploy V3"
 ### Scripts
 
 Update deployment spreadsheet
+
 1. Add .nuget folder at root and must contain
     - Nuget.exe
     - Pandell.targets. Please note that I made one change line 177 has Include="$(SolutionDir)src\*WebService\*.csproj" to include WebService
@@ -38,17 +39,19 @@ Update deployment spreadsheet
         <package id="Pandell.Deployment" version="1.10.0" />
       </packages>
       ```
+      
+    
 2. Add AutoMapper.proj at root
-    - 
-    ```
-    <?xml version="1.0" encoding="utf-8"?>
-    <Project ToolsVersion="16.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-        <Import Project=".nuget\Pandell.targets" />
-        <PropertyGroup>
-            <SolutionFile>AutoMapper.sln</SolutionFile>
-        </PropertyGroup>
-    </Project>
-    ```
+   ```
+   <?xml version="1.0" encoding="utf-8"?>
+   <Project ToolsVersion="16.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+     <Import Project=".nuget\Pandell.targets" />
+     <PropertyGroup>
+         <SolutionFile>AutoMapper.sln</SolutionFile>
+     </PropertyGroup>
+   </Project>
+   ```
+    
 3. Add Nuget.config at root
   ```
   <?xml version="1.0" encoding="utf-8"?>
@@ -65,6 +68,7 @@ Update deployment spreadsheet
     </packageSources>
   </configuration>
   ```
+  
 4. Add `tools` folder at root with follwoing tools
   - Deploy-Prepare-AutoMapper-WebService.cmd
   - Deploy-Run-AutoMapper-WebService.cmd
