@@ -8,7 +8,7 @@ See Milan's [document](https://github.com/pandell/Deployment/wiki/IIS-setup) to 
 Next
 - Install dotnet 3 preview (dotnet-hosting-3.0.0-preview6.19307.2-win)
 - Run the following script in powershell with proper credentials. This script will copy the template appPool and template website. 
-```
+   ```
    cd "C:\Program Files\IIS\Microsoft Web Deploy V3"
    .\msdeploy.exe 
      -verb:sync 
@@ -19,20 +19,20 @@ Next
      -enableLink:HttpCertConfigExtension 
      -disableLink:ContentExtension 
      -disableLink:FrameworkConfigExtension
-```
+   ```
 
 - Once executed successufully make sure the apppool is set to "No Managed Code". See PS script to set the appPool:
 
 #### Powershell Script to set appPool to No Managed Code (Assumes appPool `template.net.pandell.com` & `template.pandell.com` exist)
-```
+   ```
    # (Enter-PSSession to target IIS server)
    Enter-PSSession -ComputerName vtrusharwin2016 -Credential net\trusharm
 
    Import-Module WebAdministration
-   
+
    Set-ItemProperty IIS:\AppPools\template.net.pandell.com managedRuntimeVersion ""
    Set-ItemProperty IIS:\AppPools\template.pandell.com managedRuntimeVersion ""
-```
+   ```
 
 ### Scripts
 
@@ -42,15 +42,15 @@ First, update deployment spreadsheet with required values as per convention.
     - Nuget.exe
     - Pandell.targets. Please note that I made one change line 177 has Include="$(SolutionDir)src\*WebService\*.csproj" to include WebService
     - Packages.config with following packages:
-      ```
-      <?xml version="1.0" encoding="utf-8"?>
-      <packages>
-        <package id="7-Zip.Sfx" version="19.0.0.1" />
-        <package id="Pandell.Pli.Tools" version="6.4.0" />
-        <package id="Pandell.Run" version="6.4.0" />
-        <package id="Pandell.Deployment" version="1.10.0" />
-      </packages>
-      ```
+   ```
+   <?xml version="1.0" encoding="utf-8"?>
+   <packages>
+     <package id="7-Zip.Sfx" version="19.0.0.1" />
+     <package id="Pandell.Pli.Tools" version="6.4.0" />
+     <package id="Pandell.Run" version="6.4.0" />
+     <package id="Pandell.Deployment" version="1.10.0" />
+   </packages>
+   ```
       
     
 2. Add AutoMapper.proj at root
