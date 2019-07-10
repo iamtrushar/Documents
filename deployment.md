@@ -9,19 +9,15 @@ Install dotnet 3 preview (dotnet-hosting-3.0.0-preview6.19307.2-win)
 
 Run the script in PS with proper credentials to copy the apppool and template website. Once executed successufully make sure the apppool is set to "No Managed Code". This currently a manual step here but see PS script:
 
-#### Powershell Script to set appPool to No Managed Code
+#### Powershell Script to set appPool to No Managed Code (Assumes appPool `template.net.pandell.com` & `template.pandell.com` exist)
 ```
    # (Enter-PSSession to target IIS server)
    Enter-PSSession -ComputerName vtrusharwin2016 -Credential net\trusharm
 
-   $src = "template.net.pandell.com"
-   $trg = "template-netCore.net.pandell.com"
-
-   Import-Module webadministration
-
-   Stop-WebAppPool $src
-   Copy-Item IIS:\AppPools\$src IIS:\AppPools\$trg
-   Set-ItemProperty IIS:\AppPools\$trg managedRuntimeVersion ""
+   Import-Module WebAdministration
+   
+   Set-ItemProperty IIS:\AppPools\template.net.pandell.com managedRuntimeVersion ""
+   Set-ItemProperty IIS:\AppPools\template.pandell.com managedRuntimeVersion ""
 ```
 
 ```
