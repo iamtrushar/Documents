@@ -53,9 +53,9 @@ Update deployment spreadsheet
    ```
     
 3. Add Nuget.config at root
-  ```
-  <?xml version="1.0" encoding="utf-8"?>
-  <configuration>
+   ```
+   <?xml version="1.0" encoding="utf-8"?>
+   <configuration>
     <config>
       <add key="repositoryPath" value="nuget_modules" />
     </config>
@@ -66,8 +66,8 @@ Update deployment spreadsheet
       <clear />
       <add key="myget.org" value="https://www.myget.org/F/pandell-nuget/auth/afa88f74-5bde-47ba-aa4d-b0fb0d5cbed5/api/v3/index.json" />
     </packageSources>
-  </configuration>
-  ```
+   </configuration>
+   ```
   
 4. Add `tools` folder at root with follwoing tools
   - Deploy-Prepare-AutoMapper-WebService.cmd
