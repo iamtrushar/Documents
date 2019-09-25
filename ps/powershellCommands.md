@@ -18,6 +18,9 @@ Enter-PSSession -ComputerName HBUILD05
 Get-Credential landworks\mistryt
 ```
 
+```
+Start-Process powershell.exe -Credential "TestDomain\Me"
+```
 
 ## Clear team city cache for nuget packges
 
