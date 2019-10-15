@@ -1,0 +1,9 @@
+Expect PRs to be in states:
+- Waiting for reviews (multiple PRs per author)
+- Review failed, working on it (exactly one per author)
+- Review failed, in my TODO (multiple PRs per author)
+- Review succeeded, waiting for QA/in QA (multiple PRs per author)
+! - QA failed, working on it (exactly one per author)
+! - QA failed. in my TODO (multiple PRs per author)
+- QA succeeded, to be rebased/waiting for TeamCity before merging
+- Merged
