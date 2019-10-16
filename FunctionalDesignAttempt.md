@@ -6,9 +6,9 @@ Retrive geometry (polygon) from database for a given legal description string.
 The legal description can be of type Township/Range, (Survey/Abstract and Geographic Coordinate System to be desinged in later phase). 
 
 - Legal description for Township/Range must have State, County, Township number, Township direction, Range number, Range direction. 
-  - Meridian value is optional for input
-    - Meridian value must be determined by State and County.
-  - Quarter call value is optional
+  - Meridian value is optional for input.
+    - Meridian value must be determined using State and County when not provided.
+  - Section number & Quarter call is not needed for retriving Township polygon.
     - The polygon retrived may need to be quartered if the legal description contains quarter call.
 
 (Following TBD later)
