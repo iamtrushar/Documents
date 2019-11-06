@@ -33,4 +33,8 @@ docker network inspect simple-network
 ## get IP address of the running server
 docker inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" test-sqlserver
 
+For unknow reason I still could not ping the server with the ip address with the above. But I was able to connect via sql server management studio with:
+Server Name: localhost,1433
+Login: SA
+Pasword: yourStrong@Password
 
