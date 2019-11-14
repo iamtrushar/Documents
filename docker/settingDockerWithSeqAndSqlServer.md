@@ -12,7 +12,7 @@ docker ps -a
 docker run -d --name test-sqlserver --restart always -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=yourStrong@Password" -e "MSSQL_PID=Express" -p 1433:1433 -v "C:/Temp:/tmp" mcr.microsoft.com/mssql/server:latest
 
 ## setup env variable 
-$env:PLI_TEST_SQLSERVERS = "[{ host: 'localhost,1433', path: '/tmp/', share: 'C:\\Temp', username: 'sa', password:'yourStrong(!)Password' }]"
+$env:PLI_TEST_SQLSERVERS = "[{ host: 'localhost,1433', path: '/tmp/', share: 'C:\\Temp', username: 'sa', password:'yourStrong@Password' }]"
 
 ## Powershell to see all the path
 Get-Childitem -Path Env:* | Sort-Object Name
