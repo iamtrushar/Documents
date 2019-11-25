@@ -6,7 +6,7 @@ Net revenue interest (NRI) is the percentage of production that each party recei
 
 As a general rule, you do not want to take on an oil deal with less than a 75% NRI. There are of course exceptions to consider (such as great geology, low buy-ins and your ability to spend time finding and researching quality operators and projects).
 
-Here’s a quick, handy guide to calculating the net revenue for your oil and gas investments and specific net revenue interest versus working interest in a well. 
+#### Handy guide to calculating the net revenue for oil and gas investments and specific net revenue interest versus working interest in a well. 
 
 First, though, here’s how we defined net revenue interest or NRI for oil and gas investments in our Oil and Gas Glossary:
 
