@@ -1,7 +1,7 @@
 ## Raspberry Pi 4
 
  - Install Raspbian using NOOBs OS. Note: takes a while after 100% completion.
- - Enable VCN [youtube](https://www.youtube.com/watch?v=YP3_gvHZhfw] or [link](https://howtoraspberrypi.com/raspberry-pi-vnc/)
+ - Enable VCN [youtube](https://www.youtube.com/watch?v=YP3_gvHZhfw) or [link](https://howtoraspberrypi.com/raspberry-pi-vnc/)
    ```
    # run the command 
    sudo raspi-config
