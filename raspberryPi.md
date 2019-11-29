@@ -9,7 +9,22 @@
    # and finally answer that you want to enable VNC
    ```
  - Install Docker on the pi see instructions [here](https://linuxize.com/post/how-to-install-and-use-docker-on-raspberry-pi/)
- 
-
+ - Pull git repo 
+ - Build & run the docker container: 
+   ```
+   #Build
+   docker build -t pi .
+   #Run
+   docker run -d -p 8080:80 --name forpi pi;
+   ```
+- Note if need be to stop/delete odl containers
+   ```
+   docker container stop $(docker container ls -aq);
+   docker container rm $(docker container ls -aq)
+   ```
+- Run Seq server:
+  ```
+  docker run -d --name seq-server --restart always -e "ACCEPT_EULA=Y" -p 5341:80 datalust/seq:latest;
+  ```
 
  
