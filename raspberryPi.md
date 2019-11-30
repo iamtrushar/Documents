@@ -29,6 +29,11 @@
    docker container stop $(docker container ls -aq);
    docker container rm $(docker container ls -aq)
    ```
+- Interact with container
+  ```
+  docker run -it --rm --entrypoint "bash" pi
+  ```
+   
 - Run Seq server:
   ```
   docker run -d --name seq-server --restart always -e "ACCEPT_EULA=Y" -p 5341:80 datalust/seq:latest;
