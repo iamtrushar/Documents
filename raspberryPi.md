@@ -9,8 +9,15 @@
    # and finally answer that you want to enable VNC
    ```
  - Install Docker on the pi see instructions [here](https://linuxize.com/post/how-to-install-and-use-docker-on-raspberry-pi/)
+   ```
+   curl -fsSL https://get.docker.com -o get-docker.sh
+   sh get-docker.sh
+   sudo usermod -aG docker $USER #Log out and log back in so that the group membership is refreshed.
+
+   docker container run hello-world
+   ```
  - Pull git repo 
- - Build & run the docker container: 
+ - Build & run the docker container (eg of aspnet project in "ForPi" repo): 
    ```
    #Build
    docker build -t pi .
