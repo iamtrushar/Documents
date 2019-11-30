@@ -28,3 +28,11 @@
   ```
 
  
+
+
+## Rasberry Pi 4 (Docker Python script)
+Side experiment of running python3 file with Docker. Detail instuctions of how to use docker and python [see](https://hub.docker.com/_/python/)
+```
+docker build -t measure .
+docker run -it --rm --name measureScript measure
+```
