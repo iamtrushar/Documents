@@ -12,18 +12,32 @@ docker ps -a
 # setup docker image for sql server
 docker run -d --name test-sqlserver --restart always -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=yourStrong@Password" -e "MSSQL_PID=Express" -p 1433:1433 -v "C:/Temp:/tmp" mcr.microsoft.com/mssql/server:latest
 
-# setup env variable 
+# setup env variable (use admin powershell)
 $env:PLI_TEST_SQLSERVERS = "[{ host: 'localhost,1433', path: '/tmp/', share: 'C:\\Temp', username: 'sa', password:'yourStrong@Password' }]"
 
 (Note: require restart since it's a global variable)
 
 # Powershell to see all the path
 Get-Childitem -Path Env:* | Sort-Object Name
+```
 
-# login into the test-sqlserver
+
+```
+# Login into the test-sqlserver
 docker exec -it test-sqlserver "bash"
 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "yourStrong@Password"
 
+```
+
+```
+# Login with Sql Server Managemnt Studio
+Server Name: localhost,1433
+Login: SA
+Pasword: yourStrong@Password
+```
+
+#### Docker Create Network (Optional for fun not needed for above) 
+```
 # create simple network
 docker network create simple-network
 
@@ -35,10 +49,4 @@ docker network inspect simple-network
 
 # get IP address of the running server
 docker inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" test-sqlserver
-```
-
-For unknow reason I still could not ping the server with the ip address with the above. But I was able to connect via sql server management studio with:
-```Server Name: localhost,1433
-Login: SA
-Pasword: yourStrong@Password
 ```
