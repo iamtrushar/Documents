@@ -45,3 +45,17 @@ nuget update -self
 .\.nuget\nuget.exe update -self
 
 ```
+
+TrusharM: If you run into error, where nuget cannot connect to host: Run the following registery on admin cmd (a machine-wide registry key can be set to opt-in ALL .NET apps on the machine to the desired "let the OS decide" functionality [solution](https://github.com/NuGet/Home/issues/6837).
+
+Error: nuget existing connection was forcibly closed by the remote host. 
+
+```
+reg add HKLM\SOFTWARE\Microsoft\.NETFramework\v2.0.50727 /v SystemDefaultTlsVersions /t REG_DWORD /d 1 /f /reg:64
+reg add HKLM\SOFTWARE\Microsoft\.NETFramework\v2.0.50727 /v SystemDefaultTlsVersions /t REG_DWORD /d 1 /f /reg:32
+reg add HKLM\SOFTWARE\Microsoft\.NETFramework\v4.0.30319 /v SystemDefaultTlsVersions /t REG_DWORD /d 1 /f /reg:64
+reg add HKLM\SOFTWARE\Microsoft\.NETFramework\v4.0.30319 /v SystemDefaultTlsVersions /t REG_DWORD /d 1 /f /reg:32
+```
+
+Then update then make sure to update the globally installed nuget 
+```.\.nuget\nuget.exe update -self```
