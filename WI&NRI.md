@@ -7,7 +7,10 @@ Net revenue interest (NRI) is the percentage of production that each party recei
 
 As a general rule, you do not want to take on an oil deal with less than a 75% NRI. There are of course exceptions to consider (such as great geology, low buy-ins and your ability to spend time finding and researching quality operators and projects).
 
-### Handy guide to calculating the net revenue for oil and gas investments and specific net revenue interest versus working interest in a well. 
+---
+
+Handy guide to calculating the net revenue for oil and gas investments and specific net revenue interest versus working interest in a well. 
+
 
 First, though, here’s how we defined net revenue interest or NRI for oil and gas investments in our Oil and Gas Glossary:
 
@@ -27,7 +30,7 @@ Once you’ve figured out if you have a lease well or a unit well, you should ne
 
 That’s somewhat abstract. Let’s make it real-world applicable by going straight to the following examples.
 
-WORKING INTEREST 
+### Working Interest 
 #### Example # 1
 Q: If you own a lease of 100% of the minerals under 160 acres in a 640 acre drilling unit, how much working interest do you own in a well drilled in the unit?
 
@@ -76,7 +79,7 @@ If you own a lease covering 320 acres in a 640 acre unit and you owe 25% landown
 
 Let’s do a slight modification of the last example. This will be a really complex example. But if you can do the complex examples, the easy ones will be a piece of cake.
 
-NET REVENUE INTEREST 
+## Net Revenue Interest
 #### Example
 In a 640 acre drilling unit, you own the following, which we just determined to be 68.75% working interest in the unit:
 
