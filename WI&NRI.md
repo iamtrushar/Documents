@@ -81,8 +81,12 @@ Let’s do a slight modification of the last example. This will be a really comp
 
 ## Net Revenue Interest
 #### Example
-_In a 640 acre drilling unit, you own the following, which we just determined to be 68.75% working interest in the unit:
-1) You own 100% of the minerals in 80 acres. You gave a non-participating royalty interest of 3% to the person who sold it to you. That means you control 100% of the executive rights to the minerals, but you owe a 3% royalty on production in those 80 acres. 2) You own 50% working interest to a lease of 50% of the minerals covering 160 acres. You owe a landowner royalty of 12.5% 3) You own 100% of a lease of 100% of the minerals in 320 acres. You owe a landowner royalty of 25%. What is your net revenue interest in the well for your oil and gas investments?_
+In a 640 acre drilling unit, you own the following, which we just determined to be 68.75% working interest in the unit:
+1. You own 100% of the minerals in 80 acres. You gave a non-participating royalty interest of 3% to the person who sold it to you. That means you control 100% of the executive rights to the minerals, but you owe a 3% royalty on production in those 80 acres. 
+2. You own 50% working interest to a lease of 50% of the minerals covering 160 acres. You owe a landowner royalty of 12.5% 
+3. You own 100% of a lease of 100% of the minerals in 320 acres. You owe a landowner royalty of 25%. 
+
+What is your net revenue interest in the well for your oil and gas investments?
 
 Scroll down for the answer.
 
