@@ -32,17 +32,17 @@ That’s somewhat abstract. Let’s make it real-world applicable by going strai
 
 ### Working Interest 
 #### Example # 1
-Q: If you own a lease of 100% of the minerals under 160 acres in a 640 acre drilling unit, how much working interest do you own in a well drilled in the unit?
+_Q: If you own a lease of 100% of the minerals under 160 acres in a 640 acre drilling unit, how much working interest do you own in a well drilled in the unit?_
 
 A: 25%, because the 160 acres that you control represents 25% of the land in the drilling unit.
 
 #### Example # 2
-Q: If you own a lease of 50% of the minerals under 160 acres in a 640 acre drilling unit, how much working interest do you own in a well drilled in the unit?
+_Q: If you own a lease of 50% of the minerals under 160 acres in a 640 acre drilling unit, how much working interest do you own in a well drilled in the unit?_
 
 A: 12.5%, because you control 80 net acres in the 640 acre drilling unit. (160 X 0.50) / 640 = 0.125 or 12.5%
 
 #### Example # 3
-Q: If you 1) own 100% of the minerals in 80 acres, 2) own 50% working interest in a lease of 50% of the minerals in 160 acres and 3) you own 100% of a lease of 100% of the minerals in 320 acres, all in the same 640 acre drilling unit, how much working interest do you own in a well drilled in the unit?
+_Q: If you 1) own 100% of the minerals in 80 acres, 2) own 50% working interest in a lease of 50% of the minerals in 160 acres and 3) you own 100% of a lease of 100% of the minerals in 320 acres, all in the same 640 acre drilling unit, how much working interest do you own in a well drilled in the unit?_
 
 A: 68.75% working interest.
 
@@ -81,15 +81,8 @@ Let’s do a slight modification of the last example. This will be a really comp
 
 ## Net Revenue Interest
 #### Example
-In a 640 acre drilling unit, you own the following, which we just determined to be 68.75% working interest in the unit:
-
-1) You own 100% of the minerals in 80 acres. You gave a non-participating royalty interest of 3% to the person who sold it to you. That means you control 100% of the executive rights to the minerals, but you owe a 3% royalty on production in those 80 acres.
-
-2) You own 50% working interest to a lease of 50% of the minerals covering 160 acres. You owe a landowner royalty of 12.5%
-
-3) You own 100% of a lease of 100% of the minerals in 320 acres. You owe a landowner royalty of 25%.
-
-What is your net revenue interest in the well for your oil and gas investments?
+_In a 640 acre drilling unit, you own the following, which we just determined to be 68.75% working interest in the unit:
+1) You own 100% of the minerals in 80 acres. You gave a non-participating royalty interest of 3% to the person who sold it to you. That means you control 100% of the executive rights to the minerals, but you owe a 3% royalty on production in those 80 acres. 2) You own 50% working interest to a lease of 50% of the minerals covering 160 acres. You owe a landowner royalty of 12.5% 3) You own 100% of a lease of 100% of the minerals in 320 acres. You owe a landowner royalty of 25%. What is your net revenue interest in the well for your oil and gas investments?_
 
 Scroll down for the answer.
 
