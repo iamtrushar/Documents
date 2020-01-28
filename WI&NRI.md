@@ -96,8 +96,3 @@ Well, don’t you feel silly for not taking overriding royalties on everything l
 
 From time to time you’ll see things that are unusual that you’ll have to adjust for. But, you can do this because you understand the basics of calculating net revenue.
 
-
-
-Definations: 
-Working Interest 
-A percentage of ownership in an oil and gas lease granting its owner the right to explore, drill and produce oil and gas from a tract of property. Working interest owners are obligated to pay a corresponding percentage of the cost of leasing, drilling, producing and operating a well or unit. After royalties are paid, the working interest also entitles its owner to share in production revenues with other working interest owners, based on the percentage of working interest owned.
