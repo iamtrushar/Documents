@@ -15,3 +15,15 @@ cd C:\git\Pandell\AutoMapper\src\Pandell.AutoMapper.AMAdmin
 cd C:\git\Pandell\AutoMapper\src\Pandell.AutoMapper.AMAdmin
 .\bin\Debug\netcoreapp3.1\AMAdmin.exe upgrade target set --target "Data Source=trushar-win2016;Initial Catalog=test;User id=SA;Password=yourStrong@Password;"
 ```
+
+#### Create a db 
+- Open Sql Management Studio
+- Connect 
+Server: `localhost, 1433`
+User: `sa`
+Password `yourStrong@Password`
+
+#### Run upgrade to add schema
+```
+.\bin\Debug\netcoreapp3.1\AMAdmin.exe upgrade run --target "Data Source=trushar-win2016;Initial Catalog=test;User id=SA;Password=yourStrong@Password;"
+```
