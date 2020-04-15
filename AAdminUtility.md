@@ -32,6 +32,6 @@ Password `yourStrong@Password`
 
 Start Services
 ```
-yarn start-services
+yarn start-service
 ```
 
