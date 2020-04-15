@@ -27,3 +27,11 @@ Password `yourStrong@Password`
 ```
 .\bin\Debug\netcoreapp3.1\AMAdmin.exe upgrade run --target "Data Source=trushar-win2016;Initial Catalog=test;User id=SA;Password=yourStrong@Password;"
 ```
+
+---
+
+Start Services
+```
+yarn start-services
+```
+
