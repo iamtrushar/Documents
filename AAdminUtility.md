@@ -1,4 +1,24 @@
-4/24/2020
+## 6/10/2020
+
+```
+# check env variable 
+$env:AMADMIN_TARGET
+
+# if not set, use the following:
+$env:AMADMIN_TARGET='trushar-win2016;trushar-automapper-db;sa;yourStrong@Password'
+
+cd  .\src\Pandell.AutoMapper.AMAdmin\bin\Debug\netcoreapp3.1\
+
+# create new db
+.\AMAdmin.exe database upgrade
+
+.\src\Pandell.AutoMapper.AMAdmin\bin\Debug\netcoreapp3.1\AMAdmin.exe source list
+.\src\Pandell.AutoMapper.AMAdmin\bin\Debug\netcoreapp3.1\AMAdmin.exe source list tim --full
+.\src\Pandell.AutoMapper.AMAdmin\bin\Debug\netcoreapp3.1\AMAdmin.exe source list "vendor:USLG and version:42"
+
+```
+
+##4/24/2020
 
 ```
 # run webservice project
