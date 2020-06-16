@@ -64,12 +64,23 @@ Map {
     text-halo-radius: 2.5;
     text-allow-overlap: true;
   }
-  [zoom=13], [zoom=14] {
+  [zoom=13]{
     line-width: 4px;
     text-name: [Township_L];
     text-fill: #404040;
     text-face-name: 'Arial Bold';
-    text-size: 32;
+    text-size: 28;
+    text-opacity: 1;
+    text-halo-fill: fadeout(white, 10%);
+    text-halo-radius: 3.5;
+    text-allow-overlap: true;
+  }
+  [zoom=14] {
+    line-width: 4px;
+    text-name: [Township_L];
+    text-fill: #404040;
+    text-face-name: 'Arial Bold';
+    text-size: 30;
     text-opacity: 1;
     text-halo-fill: fadeout(white, 10%);
     text-halo-radius: 3.5;
@@ -139,7 +150,7 @@ Map {
     text-opacity: 1;
     text-face-name: 'Arial Bold';
     text-name: [Section];
-    text-size: 24;
+    text-size: 20;
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 2.5;
   }
@@ -150,7 +161,7 @@ Map {
     text-opacity: 1;
     text-face-name: 'Arial Bold';
     text-name: [Section];
-    text-size: 28;
+    text-size: 26;
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 2.5;
   }
@@ -179,9 +190,11 @@ Map {
   [zoom=14] {
     [qrtzoom14 = 'none'] { text-name: ''; }
     }
-  [zoom=15], [zoom=16] {
-    // same size for zoom 15, 16
+  [zoom=15]{
     [qrtzoom15 = 'none'] { text-name: ''; }
+    }
+  [zoom=16] {
+    [qrtzoom16 = 'none'] { text-name: ''; }
     }
  }
 #quarters {  
@@ -201,7 +214,7 @@ Map {
     line-color: #606060;
     text-fill: #707070;
     text-face-name: 'Arial Bold';
-    text-size: 16;
+    text-size: 14;
     text-opacity: 1;
     text-name: [Quarter];
     text-halo-fill: fadeout(white, 30%);
@@ -213,23 +226,12 @@ Map {
     text-fill: #606060;
     text-face-name: 'Arial Bold';
     text-name: [Quarter];
-    text-size: 20;
+    text-size: 18;
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 2.5;
     text-opacity: 1;
   }
-  [zoom=15] {
-    line-width: 1px;
-    line-color: #606060;
-    text-fill: #606060;
-    text-face-name: 'Arial Bold';
-    text-name: [Quarter];
-    text-size: 20;
-    text-halo-fill: fadeout(white, 30%);
-    text-halo-radius: 2.5;
-    text-opacity: 1;
-  }
-  [zoom=16] {
+  [zoom=15],[zoom=16] {
     line-width: 1px;
     line-color: #606060;
     text-fill: #606060;
@@ -265,19 +267,7 @@ Map {
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 1.5;
     }
-  
-  [zoom=15] {
-    line-width: 0.5px;
-    line-color: #A0A0A0;
-    text-face-name: 'Arial Bold';
-    text-name: [QtrQtr];
-    text-size: 16;
-    text-fill: #606060;
-    text-halo-fill: fadeout(white, 30%);
-    text-halo-radius: 1.5;
-    }
-  
-   [zoom=16] {
+  [zoom=15],[zoom=16] {
     line-width: 0.5px;
     line-color: #A0A0A0;
     text-face-name: 'Arial Bold';
