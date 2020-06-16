@@ -1,0 +1,127 @@
+{
+  "bounds": [
+    -116.4476,
+    44.124,
+    -111.0204,
+    49.0279
+  ],
+  "center": [
+    -113.8658,
+    46.8047,
+    7
+  ],
+  "format": "png",
+  "interactivity": false,
+  "minzoom": 6,
+  "maxzoom": 16,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "polygon",
+      "extent": [
+        -109.05007199452187,
+        31.332216487200224,
+        -103.00202435073334,
+        37.00188883097385
+      ],
+      "id": "lots",
+      "class": "",
+      "Datasource": {
+        "file": "e:\\localShapeFiles\\forTileLayers\\ByStates-5-28-2020\\MT-ID_Zoom\\\\Lots.shp",
+        "id": "lots",
+        "project": "MT",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "lots"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -0.000008983152841195214,
+        -0.000008983152840993819,
+        0,
+        0
+      ],
+      "id": "qtrqtr",
+      "class": "",
+      "Datasource": {
+        "file": "e:\\localShapeFiles\\forTileLayers\\ByStates-5-28-2020\\MT-ID_Zoom\\\\QtrQtr.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "qtrqtr"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -109.05034003293805,
+        31.332209327422017,
+        -103.00197635195107,
+        37.00154383195233
+      ],
+      "id": "quarters",
+      "class": "",
+      "Datasource": {
+        "file": "e:\\localShapeFiles\\forTileLayers\\ByStates-5-28-2020\\MT-ID_Zoom\\\\Quarters.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "quarters"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -109.05034003742963,
+        31.332209327422017,
+        -103.00197635195109,
+        37.00154383195233
+      ],
+      "id": "sections",
+      "class": "",
+      "Datasource": {
+        "file": "e:\\localShapeFiles\\forTileLayers\\ByStates-5-28-2020\\MT-ID_Zoom\\\\Sections.shp",
+        "id": "sections",
+        "project": "MT_temp3",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "sections"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -109.05034003742963,
+        31.332209327422017,
+        -103.00197635195107,
+        37.0015438319523
+      ],
+      "id": "townships",
+      "class": "",
+      "Datasource": {
+        "file": "e:\\localShapeFiles\\forTileLayers\\ByStates-5-28-2020\\MT-ID_Zoom\\\\Townships.shp",
+        "id": "townships",
+        "project": "MT-ID_Zoom_trials",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "townships"
+    }
+  ],
+  "scale": 1,
+  "metatile": 10,
+  "name": "MT-ID_Zoom",
+  "description": "",
+  "attribution": "Pandell"
+}
