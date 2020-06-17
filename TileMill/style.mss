@@ -248,39 +248,6 @@ Map {
 }
 
 
-#qtrqtr{
-  [zoom=14] {
-    [Acres < 16] { text-name: ''; }
-    }
-  [zoom=15],[zoom=16] {
-    [Acres < 8]{ text-name: ''; }
-    }
- }
-#qtrqtr {
-  [zoom=14] {
-    line-width: 0.5px;
-    line-color: #A0A0A0;
-    text-face-name: 'Arial Bold';
-    text-name: [QtrQtr];
-    text-size: 11;
-    text-fill: #606060;
-    text-halo-fill: fadeout(white, 30%);
-    text-halo-radius: 1.5;
-    }
-  [zoom=15],[zoom=16] {
-    line-width: 1px;
-    line-color: #A0A0A0;
-    text-face-name: 'Arial Regular';
-    text-name: [QtrQtr];
-    text-size: 16;
-    text-fill: #606060;
-    text-halo-fill: fadeout(white, 30%);
-    text-halo-radius: 1.5;
-    text-allow-overlap: true;
-    }
-  }
-
-
 #lots{
   [zoom=15] {
     [Acres < 8] { text-name: ''; }
@@ -291,7 +258,7 @@ Map {
  }
 #lots {
   [zoom=15], [zoom=16] {
-    line-width: 0.5px;
+    line-width: 1px;
     line-color: #A0A0A0;
     text-face-name: 'Arial Regular';
     text-name: [Lot];
