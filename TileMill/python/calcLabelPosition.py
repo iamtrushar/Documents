@@ -86,7 +86,7 @@ columnArray = addFields(path, dimensions)
 calculateLabelPosition(path, dimensions, columnArray)
 
 # path to quarters shapefile feature class (use name if running from ArcMap)
-path = r"E:\localShapeFiles\forTileLayers\ByStates-5-28-2020\CA-3\Quarters.shp"
+path = r"E:\localShapeFiles\forTileLayers\ByStates-5-28-2020\OK\Quarters.shp"
 
 dimensions = (("qrtzoom13", 380, 380),
               ("qrtzoom14", 285, 285),
