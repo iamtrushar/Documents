@@ -35,10 +35,9 @@ calculateLabelPolygonInMemory(path, r'in_memory\horizontal13', 2200, 500)
 calculateLabelPolygonInMemory(path, r'in_memory\vertical13', 900, 2200)
 
 path = "Sections"
-# tileMap zoom level 15 (~ scale in ArcMap 1:18,000)
-calculateLabelPolygonInMemory(path, r'in_memory\horizontal15', 1000, 120)
-calculateLabelPolygonInMemory(path, r'in_memory\vertical15', 120, 1000)
+path = "Sections"
+calculateLabelPolygonInMemory(path, r'in_memory\horizontal13', 407, 407)
+calculateLabelPolygonInMemory(path, r'in_memory\horizontal14', 285, 285)
+calculateLabelPolygonInMemory(path, r'in_memory\horizontal15', 145, 145)
+calculateLabelPolygonInMemory(path, r'in_memory\horizontal16', 60, 60)
 
-# tileMap zoom level 16 (~ scale in ArcMap 1:9,000)
-calculateLabelPolygonInMemory(path, r'in_memory\horizontal16', 500, 100)
-calculateLabelPolygonInMemory(path, r'in_memory\vertical16', 100, 500)

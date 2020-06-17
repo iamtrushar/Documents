@@ -31,21 +31,20 @@ def calculateLabelPosition(featureClassPath, inDimensions, inColumnArray):
     rows = arcpy.da.UpdateCursor(featureClassPath, inColumnArray)
     for row in rows:
         feature = row[0]
-        boundary = arcpy.Polygon(feature.boundary().getPart(0), sr)
         i = 1
+        # loop all columns in dimension getting width and height of label
         for item in inDimensions:
-            horizontalWidth = item[1]
-            horizontalHeight = item[2]
-
+            width = item[1]
+            height = item[2]
             # horizontal label field width
-            horizontalLabel = generateLabelPolygon(feature, horizontalWidth, horizontalHeight, sr)
-            # vertical label field width (flip h & w)
-            verticalLabel = generateLabelPolygon(feature, horizontalHeight, horizontalWidth, sr)
+            horizontalLabel = generateLabelPolygon(feature, width, height, sr)
+            # vertical label field width (flip height & width)
+            verticalLabel = generateLabelPolygon(feature, height, width, sr)
             # contains check
-            if boundary.contains(horizontalLabel):
+            if feature.contains(horizontalLabel):
                 row[i] = "horizontal"
                 rows.updateRow(row)
-            elif boundary.contains(verticalLabel):
+            elif feature.contains(verticalLabel):
                 row[i] = "vertical"
                 rows.updateRow(row)
             else:
@@ -56,7 +55,7 @@ def calculateLabelPosition(featureClassPath, inDimensions, inColumnArray):
 
 
 # path to township shapefile feature class (use name if running from ArcMap)
-path = r"E:\localShapeFiles\forTileLayers\ByStates-5-28-2020\AL-1\Townships.shp"
+path = r"E:\localShapeFiles\forTileLayers\ByStates-5-28-2020\OK\Townships.shp"
 
 # tileMap zoom level 10 (~ scale in ArcMap 1:600,000)
 # tileMap zoom level 11 (~ scale in ArcMap 1:300,000)
@@ -77,7 +76,7 @@ columnArray = addFields(path, dimensions)
 calculateLabelPosition(path, dimensions, columnArray)
 
 # path to sections shapefile feature class (use name if running from ArcMap)
-path = r"E:\localShapeFiles\forTileLayers\ByStates-5-28-2020\AL-1\Sections.shp"
+path = r"E:\localShapeFiles\forTileLayers\ByStates-5-28-2020\OK\Sections.shp"
 dimensions = (("seczoom13", 407, 407),
               ("seczoom14", 285, 285),
               ("seczoom15", 145, 145),
@@ -87,7 +86,7 @@ columnArray = addFields(path, dimensions)
 calculateLabelPosition(path, dimensions, columnArray)
 
 # path to quarters shapefile feature class (use name if running from ArcMap)
-path = r"E:\localShapeFiles\forTileLayers\ByStates-5-28-2020\AL-1\Quarters.shp"
+path = r"E:\localShapeFiles\forTileLayers\ByStates-5-28-2020\CA-3\Quarters.shp"
 
 dimensions = (("qrtzoom13", 380, 380),
               ("qrtzoom14", 285, 285),
