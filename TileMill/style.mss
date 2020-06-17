@@ -142,6 +142,7 @@ Map {
     text-size: 16;
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 2;
+    text-allow-overlap: true;
   }
   [zoom=13] {
     line-width: 2px;
@@ -153,6 +154,7 @@ Map {
     text-size: 20;
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 2.5;
+    text-allow-overlap: true;
   }
   [zoom=14] {
     line-width: 2px;
@@ -164,6 +166,7 @@ Map {
     text-size: 26;
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 2.5;
+    text-allow-overlap: true;
   }
   [zoom=15],[zoom=16] {
     line-width: 3px;
@@ -201,13 +204,13 @@ Map {
   [zoom=12] {
     line-width: 0.5px;
     line-color: #606060;
-    text-fill: #000000;
+    text-fill: #cecccc;
     text-face-name: 'Arial Bold';
     text-size: 10;
     text-opacity: 0.35;
     text-name: [Quarter];
     text-halo-fill: fadeout(white, 30%);
-    text-halo-radius: 2.5;
+    text-halo-radius: 2;
   }
   [zoom=13] {
     line-width: 1px;
@@ -218,7 +221,7 @@ Map {
     text-opacity: 1;
     text-name: [Quarter];
     text-halo-fill: fadeout(white, 30%);
-    text-halo-radius: 1.5;
+    text-halo-radius: 2;
   }
   [zoom=14] {
     line-width: 1px;
@@ -232,9 +235,9 @@ Map {
     text-opacity: 1;
   }
   [zoom=15],[zoom=16] {
-    line-width: 1px;
+    line-width: 2px;
     line-color: #606060;
-    text-fill: #606060;
+    text-fill: #707070;
     text-face-name: 'Arial Bold';
     text-name: [Quarter];
     text-size: 20;
@@ -249,33 +252,31 @@ Map {
   [zoom=14] {
     [Acres < 16] { text-name: ''; }
     }
-  [zoom=15] {
-    [Acres < 8] { text-name: ''; }
-    }
-  [zoom=16] {
-    [Acres < 2] { text-name: ''; }
+  [zoom=15],[zoom=16] {
+    [Acres < 8]{ text-name: ''; }
     }
  }
 #qtrqtr {
   [zoom=14] {
     line-width: 0.5px;
     line-color: #A0A0A0;
-    text-face-name: 'Arial Bold';
+    text-face-name: 'Arial Regular';
     text-name: [QtrQtr];
-    text-size: 11;
-    text-fill: #606060;
+    text-size: 10;
+    text-fill: #808080;
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 1.5;
     }
   [zoom=15],[zoom=16] {
-    line-width: 0.5px;
+    line-width: 1px;
     line-color: #A0A0A0;
-    text-face-name: 'Arial Bold';
+    text-face-name: 'Arial Regular';
     text-name: [QtrQtr];
-    text-size: 16;
-    text-fill: #606060;
+    text-size: 13;
+    text-fill: #505050;
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 1.5;
+    text-allow-overlap: true;
     }
   }
 
@@ -289,14 +290,16 @@ Map {
     }
  }
 #lots {
-  [zoom=15],[zoom=16] {
+  [zoom=15], [zoom=16] {
     line-width: 0.5px;
     line-color: #A0A0A0;
-    text-face-name: 'Arial Bold';
+    text-face-name: 'Arial Regular';
     text-name: [Lot];
-    text-size: 11;
+    text-size: 13;
     text-fill: #606060;
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 1.5;
+    text-allow-overlap: true;
     }
   }
+
