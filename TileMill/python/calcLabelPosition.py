@@ -1,3 +1,6 @@
+import arcpy  # import libraries (not needed if running from ArcMap's Python interpreter)
+
+
 def generateLabelPolygon(polygon, width, height, sr):
     return arcpy.Polygon(arcpy.Array(
         [arcpy.Point(polygon.trueCentroid.X - width / 2, polygon.trueCentroid.Y + height / 2),
@@ -6,11 +9,11 @@ def generateLabelPolygon(polygon, width, height, sr):
          arcpy.Point(polygon.trueCentroid.X + width / 2, polygon.trueCentroid.Y + height / 2)]), sr)
 
 
-def addFields(featureClassPath, dimensions):
+def addFields(featureClassPath, inDimensions):
     columns = ["SHAPE@"]
     lstFields = arcpy.ListFields(featureClassPath)
     fieldNames = [f.name for f in lstFields]
-    for item in dimensions:
+    for item in inDimensions:
         column = item[0]
         columns.append(column)
         if column in fieldNames:
@@ -21,16 +24,16 @@ def addFields(featureClassPath, dimensions):
     return columns
 
 
-def calculateLabelPostion(featureClassPath, dimensions, columnArray):
+def calculateLabelPosition(featureClassPath, inDimensions, inColumnArray):
     print "Calculating label positions for " + featureClassPath
     # get spatial reference
     sr = arcpy.Describe(featureClassPath).spatialReference
-    rows = arcpy.da.UpdateCursor(featureClassPath, columnArray)
+    rows = arcpy.da.UpdateCursor(featureClassPath, inColumnArray)
     for row in rows:
         feature = row[0]
         boundary = arcpy.Polygon(feature.boundary().getPart(0), sr)
         i = 1
-        for item in dimensions:
+        for item in inDimensions:
             horizontalWidth = item[1]
             horizontalHeight = item[2]
 
@@ -51,8 +54,9 @@ def calculateLabelPostion(featureClassPath, dimensions, columnArray):
             i = i + 1
     print "Done."
 
+
 # path to township shapefile feature class (use name if running from ArcMap)
-path = "Townships"
+path = r"E:\localShapeFiles\forTileLayers\ByStates-5-28-2020\AL-1\Townships.shp"
 
 # tileMap zoom level 10 (~ scale in ArcMap 1:600,000)
 # tileMap zoom level 11 (~ scale in ArcMap 1:300,000)
@@ -70,20 +74,20 @@ dimensions = (("twpzoom10", 9000, 2000),
               ("twpzoom16", 420, 60))
 
 columnArray = addFields(path, dimensions)
-calculateLabelPostion(path, dimensions, columnArray)
+calculateLabelPosition(path, dimensions, columnArray)
 
 # path to sections shapefile feature class (use name if running from ArcMap)
-path = "Sections"
+path = r"E:\localShapeFiles\forTileLayers\ByStates-5-28-2020\AL-1\Sections.shp"
 dimensions = (("seczoom13", 407, 407),
               ("seczoom14", 285, 285),
               ("seczoom15", 145, 145),
               ("seczoom16", 60, 60))
 
 columnArray = addFields(path, dimensions)
-calculateLabelPostion(path, dimensions, columnArray)
+calculateLabelPosition(path, dimensions, columnArray)
 
 # path to quarters shapefile feature class (use name if running from ArcMap)
-path = "Quarters"
+path = r"E:\localShapeFiles\forTileLayers\ByStates-5-28-2020\AL-1\Quarters.shp"
 
 dimensions = (("qrtzoom13", 380, 380),
               ("qrtzoom14", 285, 285),
@@ -91,4 +95,4 @@ dimensions = (("qrtzoom13", 380, 380),
               ("qrtzoom16", 60, 60))
 
 columnArray = addFields(path, dimensions)
-calculateLabelPostion(path, dimensions, columnArray)
+calculateLabelPosition(path, dimensions, columnArray)

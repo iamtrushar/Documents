@@ -1,16 +1,21 @@
 # import libraries (not needed if running from ArcMap's Python interpreter) 
-import arcpy 
+import arcpy
+
 
 def calculateLabelPolygonInMemory(featureClassPath, inMemoryFeatureClassName, w, h):
     polygons = []
     sr = arcpy.Describe(featureClassPath).spatialReference
-    with arcpy.da.SearchCursor(featureClassPath,"SHAPE@",spatial_reference=sr) as cursor:
+    with arcpy.da.SearchCursor(featureClassPath, "SHAPE@", spatial_reference=sr) as cursor:
         for row in cursor:
             centroid = row[0].trueCentroid
-            polygon = arcpy.Polygon(arcpy.Array([arcpy.Point(centroid.X - w/2,centroid.Y + h/2),arcpy.Point(centroid.X - w/2,centroid.Y - h/2),arcpy.Point(centroid.X + w/2,centroid.Y - h/2),arcpy.Point(centroid.X + w/2,centroid.Y + h/2)]),sr)
+            polygon = arcpy.Polygon(arcpy.Array([arcpy.Point(centroid.X - w / 2, centroid.Y + h / 2),
+                                                 arcpy.Point(centroid.X - w / 2, centroid.Y - h / 2),
+                                                 arcpy.Point(centroid.X + w / 2, centroid.Y - h / 2),
+                                                 arcpy.Point(centroid.X + w / 2, centroid.Y + h / 2)]), sr)
             polygons.append(polygon)
 
-    arcpy.CopyFeatures_management(polygons,inMemoryFeatureClassName)
+    arcpy.CopyFeatures_management(polygons, inMemoryFeatureClassName)
+
 
 path = "Townships"
 # tileMap zoom level 10 (~ scale in ArcMap 1:600,000)
