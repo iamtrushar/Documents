@@ -260,10 +260,10 @@ Map {
   [zoom=14] {
     line-width: 0.5px;
     line-color: #A0A0A0;
-    text-face-name: 'Arial Regular';
+    text-face-name: 'Arial Bold';
     text-name: [QtrQtr];
-    text-size: 10;
-    text-fill: #808080;
+    text-size: 11;
+    text-fill: #606060;
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 1.5;
     }
@@ -272,8 +272,8 @@ Map {
     line-color: #A0A0A0;
     text-face-name: 'Arial Regular';
     text-name: [QtrQtr];
-    text-size: 13;
-    text-fill: #505050;
+    text-size: 16;
+    text-fill: #606060;
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 1.5;
     text-allow-overlap: true;
@@ -295,7 +295,7 @@ Map {
     line-color: #A0A0A0;
     text-face-name: 'Arial Regular';
     text-name: [Lot];
-    text-size: 13;
+    text-size: 16;
     text-fill: #606060;
     text-halo-fill: fadeout(white, 30%);
     text-halo-radius: 1.5;
