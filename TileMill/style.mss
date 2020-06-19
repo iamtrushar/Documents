@@ -261,7 +261,7 @@ Map {
     line-width: 1px;
     line-color: #A0A0A0;
     text-face-name: 'Arial Regular';
-    text-name: [Lot];
+    text-name: "L" + [Lot];
     text-size: 16;
     text-fill: #606060;
     text-halo-fill: fadeout(white, 30%);
